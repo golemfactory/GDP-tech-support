@@ -18,45 +18,43 @@ with open("../faq.json") as f:
 
 def helpResponse(ctx, args):
 
-    if ctx.message.channel.id in allowedChannels:
+    if ctx.message.channel.id == int(os.environ.get("HELP_CHANNEL_ID")):
 
         if args == "help":
 
-            if ctx.message.channel.id == int(os.environ.get("HELP_CHANNEL_ID")):
+            status(ctx, infoStatus, coloredHelp)
+            embed = discord.Embed(
+                title="Guide to use Tech Support", color=embedColor)
 
-                status(ctx, infoStatus, coloredHelp)
-                embed = discord.Embed(
-                    title="Guide to use Tech Support", color=embedColor)
+            embed.add_field(
+                name="About", value="Discord Bot developed to help community members with questions and errors, to get started try one of the commands!", inline=False)
+            embed.add_field(
+                name="How To Use", value=f"Commands start with `{prefix}`, experiment with any of the commands below, and if your stuck on a certain command type `!help [command]` for more info :)\n\n\n\n", inline=False)
+            embed.add_field(
+                name="Commands", value="Here's a list of all commands:", inline=False)
 
-                embed.add_field(
-                    name="About", value="Discord Bot developed to help community members with questions and errors, to get started try one of the commands!", inline=False)
-                embed.add_field(
-                    name="How To Use", value=f"Commands start with `{prefix}`, experiment with any of the commands below, and if your stuck on a certain command type `!help [command]` for more info :)\n\n\n\n", inline=False)
-                embed.add_field(
-                    name="Commands", value="Here's a list of all commands:", inline=False)
+            embed.add_field(
+                name="Answer", value=f"`{prefix}answer [question]`", inline=True)
+            embed.add_field(
+                name="Feedback", value=f"`{prefix}feedback \"[feedback]\"`", inline=True)
+            embed.add_field(
+                name="Suggest", value=f"`{prefix}suggest \"[suggestion]\"`", inline=True)
 
-                embed.add_field(
-                    name="Answer", value=f"`{prefix}answer [question]`", inline=True)
-                embed.add_field(
-                    name="Feedback", value=f"`{prefix}feedback \"[feedback]\"`", inline=True)
-                embed.add_field(
-                    name="Suggest", value=f"`{prefix}suggest \"[suggestion]\"`", inline=True)
+            embed.add_field(
+                name="Ping", value=f"`{prefix}ping`", inline=True)
+            embed.add_field(
+                name="empty", value=f"`{prefix}empty`", inline=True)
+            embed.add_field(
+                name="Donate", value=f"`{prefix}donate`", inline=True)
 
-                embed.add_field(
-                    name="Ping", value=f"`{prefix}ping`", inline=True)
-                embed.add_field(
-                    name="empty", value=f"`{prefix}empty`", inline=True)
-                embed.add_field(
-                    name="Donate", value=f"`{prefix}donate`", inline=True)
+            embed.add_field(
+                name="\u200b", value="Feel free to ping @aldin#2390 for any questions or talk about the bot :D\n\n -[ github](https://github.com/adnssc/TaskForceGeneral)", inline=False)
 
-                embed.add_field(
-                    name="\u200b", value="Feel free to ping @aldin#2390 for any questions or talk about the bot :D\n\n -[ github](https://github.com/adnssc/TaskForceGeneral)", inline=False)
+            embed.set_footer(
+                text="Tech Support", icon_url="https://cdn.discordapp.com/avatars/917390822939447307/762c5053cda62e609ee954b7868b42d5.png?size=4096")
+            embed.timestamp = datetime.datetime.utcnow()
 
-                embed.set_footer(
-                    text="Tech Support", icon_url="https://cdn.discordapp.com/avatars/917390822939447307/762c5053cda62e609ee954b7868b42d5.png?size=4096")
-                embed.timestamp = datetime.datetime.utcnow()
-
-                return embed
+            return embed
 
         elif args == "feedback":
 
