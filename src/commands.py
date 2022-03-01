@@ -1,7 +1,7 @@
 
 import datetime
 
-from colors import Fore, Style
+from colorama import Fore, Style
 
 
 def printWithTime(textToPrint):   
