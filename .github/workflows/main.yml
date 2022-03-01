@@ -30,7 +30,7 @@ jobs:
             port: ${{ secrets.PORT }}
             script: |
                 cd ~/GDP-tech-support
-                git pull https://${{ secrets.PAT }}@github.com/golemfactory/GDP-tech-support
+                git pull https://github.com/golemfactory/GDP-tech-support
                 docker-compose -f docker-compose-prod.yml build
                 docker-compose -f docker-compose-prod.yml down
                 docker-compose -f docker-compose-prod.yml up -d
