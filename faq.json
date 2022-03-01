@@ -2,13 +2,13 @@
     "001": {"question": "How to change wallet?", 
             "answer": "Changing a wallet address can be done by running the command `golemsp settings set --acount <address>`, more info: https://handbook.golem.network/provider-tutorials/provider-cli"},
     
-    "002": {"question": "Which is Golem github account?", 
+    "002": {"question": "Which is Golem's Github account?", 
             "answer": "https://github.com/golemfactory"},
 
     "003": {"question": "When do I start receiving tasks?", 
             "answer": "It's hard to say as it depends on a lot of factors since Golem is a marketplace. So the hardware you're offering has to be demanded and secondly pricing is probably the most important factor also. If you don't receive any tasks, try reducing your price. To get a feeling of other peoples pricing with similar specs, you can use the stats page at https://stats.golem.network"},
 
-    "004": {"question": "Where can I see golem network stats?", 
+    "004": {"question": "Where can I see the golem network stats?", 
             "answer": "https://stats.golem.network/"},
 
     "005": {"question": "How does CPU/H pricing work?", 
@@ -21,7 +21,7 @@
             "answer": "None defined actually. Golem accepts everything as long as it's a x86-64 CPU."},
 
     "008": {"question": "What is layer 1 (L1) and Layer 2 (L2)?", 
-            "answer": "You can see it like this: Layer 1 is the most upper layer in the blockchain which contains all information in transactions. Layer 2 solutions are further down and doesn't include as much information and thus its cheaper to send transactions because you don't include as much info on the blockchain compared to Layer 1."},
+            "answer": "Here's a very very simplified explanation: Layer 1 is the most upper layer in the blockchain which contains all information in transactions. Layer 2 solutions are further down and doesn't include as much information and thus its cheaper to send transactions because you don't include as much info on the blockchain compared to Layer 1."},
 
     "009": {"question": "What difference is there between GLM and tGLM?", 
             "answer": "tGLM - test currency that you can obtain for free to test your requestor node / no real value, GLM - real currency that can be exchanged for cash"},
@@ -29,50 +29,36 @@
     "010": {"question": "Does Golem wipe/clean the task data?", 
             "answer": "Yes golem cleans the task data directories via a default schedule of 30 days. However you can configure this schedule yourself via `ya-provider clean -help`"},
 
-    "011": {"question": "Is Golem Network centralized or decentralized?", 
-            "answer": "Network communication on the golem network is centralized right now, but we're working on what we call hybrid net which is P2P connections and central net for backup for those without public IP's and then in the future we want to make it totally decentralized via P2P."},
+    "011": {"question": "Is the Golem Network centralized or decentralized?", 
+            "answer": "Network communication on the golem network is centralized right now, but we're working on what we call hybrid net which is P2P connections and central net for backup for those without public IP's. It's a step into the direction of full decentralization."},
 
-    "012": {"question": "Who are top requestors on this network?", 
-            "answer": "At this current stage the daemon doesn't log much information related to requestors. The only thing collected is the amount of tasks requested by a specific requestor. So metrics like the specific demand CPU, Ram and disk are not logged."},
-
-    "013": {"question": "Can I run golem on hosting services like AWS/OVH?", 
+    "012": {"question": "Can I run golem on hosting services like AWS/OVH?", 
             "answer": "It all comes down to if KVM access is available on the hosting platform (AWS doesn't support KVM and OVH does support it)"},
 
-    "014": {"question": "Where do I find yagna logs?", 
+    "013": {"question": "Where do I find yagna logs?", 
             "answer": "`$HOME/.local/share/yagna/yagna_rCURRENT.log` `$HOME/.local/share/ya-provider/yagna_rCURRENT.log`"},
 
-    "015": {"question": "Would a Windows provider version be coming anytime soon?", 
+    "014": {"question": "Would a Windows provider version be coming anytime soon?", 
             "answer": "We have no specified target date but we are actively exploring adding support for it."},
 
-    "016": {"question": "Is Golem a ERC20 token?", 
-            "answer": "Yes, GLM is a ERC20 token."},
+    "015": {"question": "Is Golem an ERC20 token?", 
+            "answer": "Yes, GLM is an ERC20 token."},
 
-    "017": {"question": "What is ERC20?", 
+    "016": {"question": "What is ERC20?", 
             "answer": "https://www.investopedia.com/news/what-erc20-and-what-does-it-mean-ethereum/"},
 
-    "018": {"question": "Why do people run nodes on the testnet?", 
-            "answer": "Some people do it to support the network, making it easier to test for requestors. Other nodes are put up by admins. Some people may not want to deal with crypto taxes but want to get involved regardless. There is also a small chance that one might win a CIP by providing regardless of what network it is on."},
+    "017": {"question": "Why do people run nodes on the testnet?", 
+            "answer": "Most common reason is to support requestors in testing their applications for free, so they quicker can progress with migrating their application to the mainnet."},
 
-    "019": {"question": "How do I update golem to the newest version?", 
-            "answer": "Shutdown provider and run the install again `curl -sSf https://join.golem.network/as-provider | bash -`"},
+    "018": {"question": "How do I update golem to the newest version?", 
+            "answer": "Shutdown the provider and run the installer again `curl -sSf https://join.golem.network/as-provider | bash -`"},
 
-    "020": {"question": "What is THORG?", 
-            "answer": "Thorg is a desktop application that allows users to mine cryptocurrency. Once you set up Thorg you will be able to start mining (running computations) and get paid in GLM, an Ethereum-based cryptocurrency for your machine's work.Check website for more information : https://www.thorg.io/"},
+    "019": {"question": "What is THORG?", 
+            "answer": "Thorg is a desktop application that allows users to mine cryptocurrency. Once you set up Thorg you will be able to start mining (running computations) and get paid in GLM, an Ethereum-based cryptocurrency for your machine's work. Check website for more information : https://www.thorg.io/"},
 
-    "021": {"question": "Can I change price while executing tasks?", 
-            "answer": "You can always change the pricing of your node, but it won't affect the current agreements that you've settled with a requestor. It only affect future ones."},
+    "020": {"question": "Can I change price while executing tasks?", 
+            "answer": "You can always change the pricing of your node, but it won't affect the current agreements that you've settled with a requestor. It'll only affect future ones."},
 
-    "022": {"question": " ", "answer": " "},
-    "023": {"question": " ", "answer": " "},
-    "024": {"question": " ", "answer": " "},
-    "025": {"question": " ", "answer": " "},
-    "026": {"question": " ", "answer": " "},
-    "027": {"question": " ", "answer": " "},
-    "028": {"question": " ", "answer": " "},
-    "029": {"question": " ", "answer": " "},
-    "030": {"question": " ", "answer": " "},
-    "031": {"question": " ", "answer": " "},
-    "032": {"question": " ", "answer": " "},
-    "033": {"question": " ", "answer": " "}
+    "021": {"question": " ", "answer": " "}
 }
 
