@@ -101,91 +101,72 @@ def helpResponse(ctx, args):
 
 
 def answerResponse(ctx, question):
+    status(ctx, infoStatus, coloredAnswer)
 
-    if ctx.message.channel.id in allowedChannels:
+    index = DetectKeywords(question)
+    print("INDEXXXXXXXXXXXXX " + index)
 
-        status(ctx, infoStatus, coloredAnswer)
+    int(index)
 
-        index = DetectKeywords(question)
-        print("INDEXXXXXXXXXXXXX " + index)
+    embed = discord.Embed(
+        title=faq[index]["question"], description=faq[index]["answer"], color=embedColor)
 
-        int(index)
-        embed = discord.Embed(
-            title=faq[index]["question"], description=faq[index]["answer"], color=embedColor)
+    embed.set_footer(text="Tech Support",
+                     icon_url="https://cdn.discordapp.com/avatars/917390822939447307/762c5053cda62e609ee954b7868b42d5.png?size=4096")
+    embed.timestamp = datetime.datetime.utcnow()
 
-        embed.set_footer(text="Tech Support",
-                        icon_url="https://cdn.discordapp.com/avatars/917390822939447307/762c5053cda62e609ee954b7868b42d5.png?size=4096")
-                        
-        embed.timestamp = datetime.datetime.utcnow()
-
-        return embed
+    return embed
 
 
 def feedbackResponse(ctx, feedback):
+    status(ctx, infoStatus, coloredFeedback)
 
-    if ctx.message.channel.id in allowedChannels:
+    dmEmbed = discord.Embed(
+        title="Feedback", description=feedback, color=embedColor)
+    dmEmbed.set_footer(text=ctx.author.name, icon_url=ctx.author.avatar_url)
 
-        status(ctx, infoStatus, coloredFeedback)
+    embed = discord.Embed(title="Feedback proposed!",
+                          description="Thank you for improving the bot :)", color=embedColor)
+    embed.set_footer(text="Tech Support",
+                     icon_url="https://cdn.discordapp.com/avatars/917390822939447307/762c5053cda62e609ee954b7868b42d5.png?size=4096")
+    embed.timestamp = datetime.datetime.utcnow()
 
-        dmEmbed = discord.Embed(
-            title="Feedback", description=feedback, color=embedColor)
-        dmEmbed.set_footer(text=ctx.author.name, icon_url=ctx.author.avatar_url)
-
-        embed = discord.Embed(title="Feedback proposed!",
-                            description="Thank you for improving the bot :)", color=embedColor)
-
-        embed.set_footer(text="Tech Support",
-                        icon_url="https://cdn.discordapp.com/avatars/917390822939447307/762c5053cda62e609ee954b7868b42d5.png?size=4096")
-
-        embed.timestamp = datetime.datetime.utcnow()
-
-        return dmEmbed, embed
+    return dmEmbed, embed
 
 
 def suggestResponse(ctx, suggestion):
-    
-    if ctx.message.channel.id in allowedChannels:
+    status(ctx, infoStatus, coloredFeedback)
 
-        status(ctx, infoStatus, coloredFeedback)
+    dmEmbed = discord.Embed(
+        title="Suggestion", description=suggestion, color=embedColor)
+    dmEmbed.set_footer(text=ctx.author.name, icon_url=ctx.author.avatar_url)
 
-        dmEmbed = discord.Embed(
-            title="Suggestion", description=suggestion, color=embedColor)
-        dmEmbed.set_footer(text=ctx.author.name, icon_url=ctx.author.avatar_url)
+    embed = discord.Embed(title="Suggestion saved!",
+                          description="Thank you for improving the bot :)", color=embedColor)
+    embed.set_footer(text="Tech Support",
+                     icon_url="https://cdn.discordapp.com/avatars/917390822939447307/762c5053cda62e609ee954b7868b42d5.png?size=4096")
+    embed.timestamp = datetime.datetime.utcnow()
 
-        embed = discord.Embed(title="Suggestion saved!",
-                            description="Thank you for improving the bot :)", color=embedColor)
-
-        embed.set_footer(text="Tech Support",
-                        icon_url="https://cdn.discordapp.com/avatars/917390822939447307/762c5053cda62e609ee954b7868b42d5.png?size=4096")
-        embed.timestamp = datetime.datetime.utcnow()
-
-        return dmEmbed, embed
+    return dmEmbed, embed
 
 
 def donateResponse(ctx):
+    status(ctx, infoStatus, coloredDonate)
 
-    if ctx.message.channel.id in allowedChannels:
+    embed = discord.Embed(
+        title="Donate", description="If you would like to support development, consider supporting on addresses:", color=embedColor)
 
-        status(ctx, infoStatus, coloredDonate)
+    embed.add_field(name="ERC-20: ", value=wallet_ERC20)
 
-        embed = discord.Embed(
-            title="Donate", description="If you would like to support development, consider supporting on addresses:", color=embedColor)
+    embed.set_footer(text="Tech Support",
+                     icon_url="https://cdn.discordapp.com/avatars/917390822939447307/762c5053cda62e609ee954b7868b42d5.png?size=4096")
+    embed.timestamp = datetime.datetime.utcnow()
 
-        embed.add_field(name="ERC-20: ", value=wallet_ERC20)
-
-        embed.set_footer(text="Tech Support",
-                        icon_url="https://cdn.discordapp.com/avatars/917390822939447307/762c5053cda62e609ee954b7868b42d5.png?size=4096")
-
-        embed.timestamp = datetime.datetime.utcnow()
-
-        return embed    
+    return embed
 
 
 def pingResponse(ctx, ping):
-    
-    if ctx.message.channel.id in allowedChannels:
-
-        status(ctx, infoStatus, coloredPing)
-        embed = discord.Embed(title="Ping", description="Pong! " +
-                            str(ping) + "ms", color=embedColor)
-        return embed
+    status(ctx, infoStatus, coloredPing)
+    embed = discord.Embed(title="Ping", description="Pong! " +
+                          str(ping) + "ms", color=embedColor)
+    return embed
