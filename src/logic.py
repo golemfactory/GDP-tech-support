@@ -2,8 +2,6 @@
 import re
 import json
 
-from numpy import require, single
-
 
 f = open("../faq.json", encoding="utf-8")
 faq = json.load(f)
@@ -94,9 +92,12 @@ def CheckKeywords(message):
     
     # what is thorg
     Response("020", faq["020"]["answer"], ["what", "is", "thorg"])
-
+    
     # can I change price while executing tasks
     Response("021", faq["021"]["answer"], ["can", "i", "change", "price", "while", "executing", "tasks", "task"])
+   
+    # applying for copywriting position
+    Response("022", faq["022"]["answer"], ["cv", "resume", "copywriting", "job", "position"])
     
 
     # calcuating the best match for input message
