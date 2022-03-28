@@ -112,7 +112,6 @@ def answerResponse(ctx, question):
         print("INDEXXXXXXXXXXXXX " + index)
 
         int(index)
-
         embed = discord.Embed(
             title=faq[index]["question"], description=faq[index]["answer"], color=embedColor)
 

@@ -32,33 +32,37 @@
     "011": {"question": "Is the Golem Network centralized or decentralized?", 
             "answer": "Network communication on the golem network is centralized right now, but we're working on what we call hybrid net which is P2P connections and central net for backup for those without public IP's. It's a step into the direction of full decentralization."},
 
-    "012": {"question": "Can I run golem on hosting services like AWS/OVH?", 
+    "012": {"question": "Who are top requestors on Golem Network?",
+            "answer": "Top requestors are this and that, yes."},
+
+    "013": {"question": "Can I run golem on hosting services like AWS/OVH?", 
             "answer": "It all comes down to if KVM access is available on the hosting platform (AWS doesn't support KVM and OVH does support it)"},
 
-    "013": {"question": "Where do I find yagna logs?", 
+    "014": {"question": "Where do I find yagna logs?", 
             "answer": "`$HOME/.local/share/yagna/yagna_rCURRENT.log` `$HOME/.local/share/ya-provider/yagna_rCURRENT.log`"},
 
-    "014": {"question": "Would a Windows provider version be coming anytime soon?", 
+    "015": {"question": "Would a Windows provider version be coming anytime soon?", 
             "answer": "We have no specified target date but we are actively exploring adding support for it."},
 
-    "015": {"question": "Is Golem an ERC20 token?", 
+    "016": {"question": "Is Golem an ERC20 token?", 
             "answer": "Yes, GLM is an ERC20 token."},
 
-    "016": {"question": "What is ERC20?", 
+    "017": {"question": "What is ERC20?", 
             "answer": "https://www.investopedia.com/news/what-erc20-and-what-does-it-mean-ethereum/"},
 
-    "017": {"question": "Why do people run nodes on the testnet?", 
+    "018": {"question": "Why do people run nodes on the testnet?", 
             "answer": "Most common reason is to support requestors in testing their applications for free, so they quicker can progress with migrating their application to the mainnet."},
 
-    "018": {"question": "How do I update golem to the newest version?", 
+    "019": {"question": "How do I update golem to the newest version?", 
             "answer": "Shutdown the provider and run the installer again `curl -sSf https://join.golem.network/as-provider | bash -`"},
 
-    "019": {"question": "What is THORG?", 
+    "020": {"question": "What is THORG?", 
             "answer": "Thorg is a desktop application that allows users to mine cryptocurrency. Once you set up Thorg you will be able to start mining (running computations) and get paid in GLM, an Ethereum-based cryptocurrency for your machine's work. Check website for more information : https://www.thorg.io/"},
 
-    "020": {"question": "Can I change price while executing tasks?", 
+    "021": {"question": "Can I change price while executing tasks?", 
             "answer": "You can always change the pricing of your node, but it won't affect the current agreements that you've settled with a requestor. It'll only affect future ones."},
 
-    "021": {"question": " ", "answer": " "}
+    "022": {"question": "Applying for copywriting position", 
+            "answer": "Please send us your resume using the link: https://system.erecruiter.pl/FormTemplates/RecruitmentForm.aspx?WebID=6fc1df96b3ae4300a989b89d5323819d"}
 }
 
